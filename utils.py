@@ -33,7 +33,7 @@ def save(length, res, ytb_title, postfix, file_path):
         raise Exception('Unsupported file type')
     with open('{}/{}.{}'.format(file_path, ytb_title, postfix), 'wb') as srt:
         time.sleep(0.2)
-        print('Downloading {}...'.format(notice))
+        print('Downloading {}: {}...'.format(notice, ytb_title))
         with tqdm(
                 total=length,
                 ncols=100,

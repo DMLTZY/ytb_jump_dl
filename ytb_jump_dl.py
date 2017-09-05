@@ -21,20 +21,17 @@ def run(url, file_path):
     session.headers = headers
     session.proxies = proxies
 
-    # pool = ThreadPool(4)
-    #
-    # fun = partial(ytb_download, session, file_path)
+    pool = ThreadPool(4)
+
+    fun = partial(ytb_download, session, file_path)
     if 'playlist' in url:
-        # pool.map(fun, get_urls_in_playlist(session, url))
-        for video_url in get_urls_in_playlist(session, url):
-            ytb_download(session, file_path, video_url)
+        pool.map(fun, get_urls_in_playlist(session, url))
+        # for video_url in get_urls_in_playlist(session, url):
+        #     ytb_download(session, file_path, video_url)
     else:
-        # url_iter = []
-        # url_iter.append(url)
-        # pool.map(fun, url_iter)
-        ytb_download(session, url, file_path)
-    # pool.close()
-    # pool.join()
+        ytb_download(session, file_path, url)
+    pool.close()
+    pool.join()
 
 if __name__ == '__main__':
     args_len = len(sys.argv)
