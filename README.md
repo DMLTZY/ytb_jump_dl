@@ -10,7 +10,9 @@ Download youtube video or playlist with subtitle.
 * [parsel 1.2.0](https://github.com/scrapy/parsel)
 * [tqdm 4.15.0](https://github.com/tqdm/tqdm)
 
-**note:** about Requests package above, you can install with leatest version if you can visit google directly. I used leatest version with socks error when I added proxies in requests.get(). So, I need to modify(hack) some code in Requests.
+**notes:** about Requests package above, you can install with leatest version if you can visit google directly. I used leatest version with socks error when I added proxies in requests.get(). So, I need to modify(hack) some code in Requests.
+
+**tips:** `pip install -U requests[socks]==2.12.0`
 
 #### Modify(hack) Requests source code
 
