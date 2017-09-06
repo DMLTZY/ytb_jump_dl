@@ -22,6 +22,10 @@ Download youtube video or playlist with subtitle.
 
 All above points refer to Requests leatest version.
 
+### Proxy
+
+127.0.0.1:1080
+
 ### Man page
 
 ```bash
@@ -35,3 +39,7 @@ Args: url  -> url of video or playlist
 ```bash
 $ python ytb_jump_dl /Users/xxx/Downloads https://www.youtube.com...
 ```
+
+### Bug
+
+Showing of progress bar is not perfect in multiprocess.
