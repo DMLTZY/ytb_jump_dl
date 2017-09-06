@@ -42,7 +42,7 @@ def save(length, res, ytb_title, postfix, file_path):
                 bar_format='  {l_bar}{bar}| {n_fmt}/{total_fmt} '
                            '[Remaining: {remaining}, {rate_fmt}]'
         ) as bar:
-            for chunk in res.iter_content(chunk_size=1024):
+            for chunk in res.iter_content(chunk_size=4096):
                 if chunk:
                     srt.write(chunk)
                     # time.sleep(0.2)
